@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+  <head>
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,100;1,200&display=swap"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet">
+    <script defer src="js/app.js"></script>
+  </head>
+  
+  
+  <body>
+    <div class="header">
+      <div id="logo">
+        <a href="./index.html"> 
+          <img src="assets/logo/logo-01.svg" width="400"/>
+        </a>
+      </div>
+      <div class="rest">
+        <div id="menu">
+          <div>
+            <a href="./index.html" class="active"> products</a>
+          </div>
+          <div class="menu-cart">
+            <a href="./cart.html"> cart</a>
+            <div class="oval">2</div>
+          </div>
+        </div>
+        <div>
+          <hr>
+        </div>
+        <div>
+          <h1>Our hand-made cinnamon rolls</h1>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="big-container">
+      <div>
+        <img src="assets/products/original-cinnamon-roll.jpg" class="detail-image" alt="original cinnamon roll on a white plate with cinnamon on the left"/>
+      </div>
+      <div class="rest">
+        <div>
+          <p>Customize our delicious, <br>hand-making cinnamons to <br>your liking!</p>
+          <br>
+          <br>
+          <br>
+          <h5>Glazing:</h5>
+          <select id="glazingOptions" onchange="glazingChange(this)"></select>
+          <h5>Pack size:</h5>
+          <select id="packingOptions" onchange="packingChange(this)"></select>
+        </div>
+        
+        <div class="small-container">
+          <div>
+            <h4 class="cost">$2.49</h4>
+          </div>
+          <div>
+            <h4 class="button">Add to Cart</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
