@@ -48,6 +48,6 @@ function packingChange() {
 
 function updatePrice(){
     let updatedPrice = (basePrice + glazePrice) * packPrice;
-    let costElement = document.querySelector('.cost');
+    let costElement = document.querySelector('.detail-cost');
     costElement.innerText = "$"+ updatedPrice.toFixed(2);
 }
