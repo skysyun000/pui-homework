@@ -12,11 +12,11 @@ const glazingPrice = {
 let packingPrice = {
     "1": 1,
     "3": 3,
-    "6": 6,
-    "12": 12
+    "6": 5,
+    "12": 10
 }
 
-for (let key in glazingPrice){
+for (let key in glazingPrice){ //referenced stackflow: "How do I loop through or enumerate a JavaScript object?" 
     let option1 = document.createElement('option');
     option1.text = key;
     option1.value = glazingPrice[key];
@@ -49,5 +49,5 @@ function packingChange() {
 function updatePrice(){
     let updatedPrice = (basePrice + glazePrice) * packPrice;
     let costElement = document.querySelector('.detail-cost');
-    costElement.innerText = "$"+ updatedPrice.toFixed(2);
+    costElement.innerText = "$"+ updatedPrice.toFixed(2); //toFixed(2) was also searched up, it is for rounding off the trailing 0s
 }
