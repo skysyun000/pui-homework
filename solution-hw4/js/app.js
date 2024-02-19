@@ -34,7 +34,7 @@ let basePrice = rolls[rollType]["basePrice"];
 let costElement = document.querySelector('.detail-cost');
 costElement.innerText = "$"+ basePrice;
 
-
+//hw-3
 for (let key in glazingPrice){ //referenced stackflow: "How do I loop through or enumerate a JavaScript object?" 
     let option1 = document.createElement('option');
     option1.text = key;
@@ -71,12 +71,13 @@ function updatePrice(){
     costElement.innerText = "$"+ updatedPrice.toFixed(2); //toFixed(2) was also searched up, it is for rounding off the trailing 0s
 }
 
+//hw-4
 let cart = [];
 
 class Roll {
     constructor(rollType, rollGlazing, packSize, basePrice) {
         this.type = rollType;
-        this.glazing =  rollGlazing;
+        this.glazing = rollGlazing;
         this.size = packSize;
         this.basePrice = basePrice;
     }
