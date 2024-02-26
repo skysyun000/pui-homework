@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+  <head>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,100;1,200&display=swap"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet">
+    <script defer src="js/rollsData.js"></script>
+    <script defer src="js/cart.js"></script>
+  </head>
+  
+  <body>
+    <div class="header">
+      <div id="logo">
+        <a href="./index.html"> 
+          <img src="assets/logo/logo-01.svg" width="400"/>
+        </a>
+      </div>
+      <div class="rest">
+        <div class="menu">
+          <div>
+            <a href="./index.html" class="active">products</a>
+            <a href="./cart.html">cart</a>
+          </div>
+          <div id="oval">2</div>
+        </div>
+        <div>
+          <hr>
+        </div>
+        <div>
+          <h1>Our hand-made cinnamon rolls</h1>
+        </div>
+      </div>
+    </div>
+
+    <div id="cart-list">
+      <template id="cart-template">
+        <div class="cart-item">
+          <div class="cart-item-details">
+            <div>
+              <img src="assets/products/original-cinnamon-roll.jpg" class="cart-image" alt="original cinnamon roll on a white plate with cinnamon on the left"/>
+            </div>
+            <div>
+              <h3 class="cart-description">
+                <div class="cart-name"></div>
+                <div class="cart-glaze"></div>
+                <div class="cart-pack"></div>
+              </h3>
+            </div>
+            <div class="cart-price">
+              <h3 >$2.49</h3>
+            </div>
+          </div>
+          <p class="remove">Remove</p>
+        </div>
+      </template>
+      
+      <!-- <div class="cart-item">
+        <div>
+          <img src="assets/products/double-chocolate-cinnamon-roll.jpg" class="cart-image" alt="double chocolate cinnamon roll on paper"/>
+        </div>
+        <div>
+          <h3 class="description">Double Chocolate Cinnamon Roll
+            <br>Glazing: Sugar Milk
+            <br>Pack Size: 6
+          </h3>
+        </div>
+        <div class="cart-price">
+          <h3>$27.45</h3>
+        </div>
+      </div>
+      <p class="remove">Remove</p> -->
+  
+      <div class="checkout">
+        <div>
+          <p>Total</p>
+        </div>
+        <div>
+          <p>$29.94</p>
+        </div>
+      </div>
+      <h4>Checkout</h4>
+    </div>
+  </body>
+</html>
