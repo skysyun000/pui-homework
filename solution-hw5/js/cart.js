@@ -25,9 +25,6 @@ class Roll {
         this.basePrice = rollPrice;
 
         this.calculatedPrice = (this.basePrice + glazingPrice[this.glazing])*packingPrice[this.size];
-        console.log(typeof(glazingPrice[this.glazing]));
-        console.log(this.calculatedPrice);
-
     }
 }
 
@@ -43,6 +40,14 @@ function addNewCartItem(rollType, rollGlazing, packSize, rollPrice) {
     return cartItem;
 }
 
+function updateCartTotal(){
+    let finalTotal = 0;
+    cartPageCart.forEach(cartItem =>{
+        finalTotal += parseFloat(cartItem.calculatedPrice);
+    });
+    document.querySelector("#final-total").textContent = "$ "+ finalTotal.toFixed(2);
+}
+
 //changing the DOM
 function createElement(cartItem) {
     const template = document.querySelector('#cart-template');
@@ -51,9 +56,9 @@ function createElement(cartItem) {
     cartItem.element = clone.querySelector('.cart-item');
 
     const btnRemove = cartItem.element.querySelector('.remove');
-    console.log(btnRemove);
     btnRemove.addEventListener('click', () => {
         deleteItem(cartItem);
+        updateCartTotal();
     });
 
     const cartListElement = document.querySelector('#cart-list');
@@ -66,13 +71,13 @@ function updateElement(cartItem){
     const cartNameElement = cartItem.element.querySelector('.cart-name');
     const cartGlazeElement = cartItem.element.querySelector('.cart-glaze');
     const cartPackElement = cartItem.element.querySelector('.cart-pack');
-    const cartPriceElement = cartItem.element.querySelector('.cart-price');
+    const cartPriceElement = cartItem.element.querySelector('#cart-price');
 
     cartImageElement.src = './assets/products/'+ rolls[cartItem.type]["imageFile"]
-    cartNameElement.innerText = cartItem.type;
-    cartGlazeElement.innerText = cartItem.glazing;
-    cartPackElement.innerText = cartItem.size;
-    cartPriceElement.innerText = cartItem.calculatedPrice.toFixed(2);
+    cartNameElement.innerText = cartItem.type + " Cinnamon Roll";
+    cartGlazeElement.innerText = "Glazing: " + cartItem.glazing;
+    cartPackElement.innerText = "Pack Size: "+ cartItem.size;
+    cartPriceElement.innerText = "$ "+ cartItem.calculatedPrice.toFixed(2);
 
 }
 
@@ -108,14 +113,6 @@ const RollOne = addNewCartItem(
     rolls["Original"]["basePrice"]
 );
 
-
-
-
-
-
-
-
 for (const cartItem of cartPageCart) {
-    console.log(cartItem);
     createElement(cartItem);
 }
